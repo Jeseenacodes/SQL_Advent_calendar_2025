@@ -36,6 +36,17 @@ FROM toy_production AS tp
 INNER JOIN toy_delivery as td ON tp.toy_id = td.toy_id 
 ORDER BY tp.toy_id
 ```
+Output: 
+
+| toy_id | toy_name         |
+|--------|------------------|
+| 1      | Robot Dog        |
+| 3      | Building Blocks  |
+| 5      | Race Car         |
+| 7      | Train Set        |
+| 8      | Action Figure    |
+| 10     | Stuffed Elephant |
+| 12     | Art Set          |
 
 ### Undelivered toys
 ```sql
@@ -55,3 +66,6 @@ LEFT JOIN toy_delivery td ON tp.toy_id = td.toy_id
 GROUP BY tp.toy_id, tp.toy_name
 ORDER BY delivery_count DESC;
 ```
+
+
+
