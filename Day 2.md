@@ -3,6 +3,23 @@ Tables
 - toy_delivery(toy_id, child_name, delivery_date)
 
 ```sql
+CREATE TABLE toy_production (
+    toy_id INT PRIMARY KEY,
+    toy_name VARCHAR(100) NOT NULL,
+    production_date DATE NOT NULL
+);
+```
+
+```sql
+CREATE TABLE toy_delivery (
+    toy_id INT NOT NULL,
+    child_name VARCHAR(100) NOT NULL,
+    delivery_date DATE NOT NULL,
+    FOREIGN KEY (toy_id) REFERENCES toy_production(toy_id)
+);
+```
+
+```sql
 INSERT INTO toy_delivery (toy_id, child_name, delivery_date) VALUES
 (1, 'Emma Johnson', '2024-12-24'),
 (3, 'Olivia Brown', '2024-12-25'),
