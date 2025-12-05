@@ -1,0 +1,63 @@
+
+```sql
+CREATE TABLE hall_decorations (
+    decoration_id INT PRIMARY KEY,
+    decoration_name VARCHAR(100),
+    energy_cost_per_hour DECIMAL(6,3)
+);
+```
+
+```sql
+INSERT INTO hall_decorations (decoration_id, decoration_name, energy_cost_per_hour) VALUES
+(1, 'LED String Lights', 0.012),
+(2, 'Solar Powered Lanterns', 0.005),
+(3, 'Battery Candles', 0.008),
+(4, 'Fiber Optic Tree', 0.015),
+(5, 'Incandescent String Lights', 0.045),
+(6, 'Neon Sign Display', 0.078),
+(7, 'LED Wreath', 0.009),
+(8, 'Projection Light Show', 0.095),
+(9, 'LED Icicle Lights', 0.011),
+(10, 'Halogen Spotlight', 0.125),
+(11, 'LED Net Lights', 0.010),
+(12, 'Animated Light Reindeer', 0.065),
+(13, 'LED Rope Lights', 0.013),
+(14, 'Inflatable Santa (with lights)', 0.082),
+(15, 'LED Snowflakes', 0.007),
+(16, 'Vintage Bubble Lights', 0.055),
+(17, 'LED Star Topper', 0.006),
+(18, 'Ceramic Village Set', 0.038),
+(19, 'LED Curtain Lights', 0.014),
+(20, 'Motorized Train Display', 0.042),
+(21, 'LED Garland', 0.009),
+(22, 'Plasma Ball Decoration', 0.018),
+(23, 'LED Window Candles', 0.004),
+(24, 'Laser Light Projector', 0.088),
+(25, 'LED Pathway Markers', 0.010),
+(26, 'Musical Light Show Tree', 0.072),
+(27, 'LED Tinsel Strands', 0.008),
+(28, 'Color-Changing LED Bulbs', 0.011),
+(29, 'Smart WiFi Light Strips', 0.016),
+(30, 'Mechanical Nutcracker (animated)', 0.035);
+```
+
+## Tables
+- hall_decorations(decoration_id, decoration_name, energy_cost_per_hour)
+
+### Kevin's trying to decorate the house without sending the electricity bill through the roof. Write a query to find the top 5 most energy-efficient decorations (i.e. lowest cost per hour to operate).
+
+```sql
+SELECT * FROM hall_decorations
+ORDER BY energy_cost_per_hour ASC
+LIMIT 5;
+```
+
+Output:
+
+| decoration_id | decoration_name       | energy_cost_per_hour |
+|---------------|------------------------|------------------------|
+| 23            | LED Window Candles     | 0.004                 |
+| 2             | Solar Powered Lanterns | 0.005                 |
+| 17            | LED Star Topper        | 0.006                 |
+| 15            | LED Snowflakes         | 0.007                 |
+| 3             | Battery Candles        | 0.008                 |
