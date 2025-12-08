@@ -135,6 +135,7 @@ INSERT INTO resort_monthly_snowfall (resort_id, snow_month, resort_name, snowfal
 
 ## Buddy is planning a winter getaway and wants to rank ski resorts by annual snowfall. Can you help him bucket these ski resorts into quartiles?
 ```sql
+# Using CTE
 WITH annual_snowfall AS (
     SELECT
         resort_id,
@@ -150,6 +151,7 @@ ORDER BY snowfall_quartile, total_snowfall DESC;
 ```
 
 ```sql
+# Using Subquery
 SELECT 
     *,
     NTILE(4) OVER (ORDER BY total_snowfall DESC) AS snowfall_quartile
